@@ -24,8 +24,25 @@ def ethiop2ipa(ethiop):
     return ipa
 
 
+import argparse
 def main():
-    geez = sys.stdin.read().strip()
+    # command line option
+    parser = argparse.ArgumentParser(description="Convert geez to ethiop and ipa")
+    parser.add_argument("-l", "--latex", action="store_true", help="output by latex style")
+    args = parser.parse_args()
+    
+    # get geez from stdin
+    # print reactively to stdout
+    geez = sys.stdin.readline()
+    geez = geez.strip()
     ethiop = geez2ethiop(geez)
     ipa = ethiop2ipa(ethiop)
-    print("\n".join([geez, ethiop, ipa]))
+
+
+    if args.latex:
+        print("\\geeztext{" + ethiop + "}")
+        print("\\textipa{" + ipa + "}")
+    else:
+        print(geez)
+        print(ethiop)
+        print(ipa)
