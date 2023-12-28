@@ -4,7 +4,7 @@ This module converts Ethiopian scripts into PDFLaTeX commands.
 
 ## Installation
 ```bash
-pip install geez2ethiop
+pip install git+https://github.com/tachi-hi/geez2ethiop.git
 ```
 
 ## Command Line
