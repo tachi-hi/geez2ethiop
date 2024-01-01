@@ -1,3 +1,8 @@
+"""
+This is the setup script for the 'geez2ethiop' package.
+It defines the package name, version, dependencies, and entry points.
+"""
+
 from setuptools import setup, find_packages
 
 setup(

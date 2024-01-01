@@ -1,3 +1,19 @@
+'''This module contains two dictionaries: `map_geez2ethiop` and `map_ethiop2ipa`.
+`map_geez2ethiop` maps Geez characters to their corresponding Ethiopic representation.
+`map_ethiop2ipa` maps Ethiopic characters to their corresponding IPA representation.
+
+Example usage:
+    # Convert Geez character to Ethiopic representation
+    geez_char = 'ሀ'
+    ethiop_char = map_geez2ethiop[geez_char]
+    print(ethiop_char)  # Output: 'ha'
+
+    # Convert Ethiopic character to IPA representation
+    ethiop_char = 'h'
+    ipa_char = map_ethiop2ipa[ethiop_char]
+    print(ipa_char)  # Output: 'h'
+'''
+
 map_geez2ethiop = {
     'ሀ' : 'ha', 
     'ሁ' : 'hu', 
