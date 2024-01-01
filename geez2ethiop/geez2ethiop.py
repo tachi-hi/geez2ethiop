@@ -24,7 +24,7 @@ def geez2ethiop(geez):
     """
     ethiop = ""
     for g in geez:
-        if g in map_geez2ethiop.keys():
+        if g in map_geez2ethiop:
             ethiop += map_geez2ethiop[g]
         else:
             ethiop += g
