@@ -1,5 +1,8 @@
 # geez2ethiop
 
+
+[![Pylint](https://github.com/tachi-hi/geez2ethiop/actions/workflows/pylint.yml/badge.svg)](https://github.com/tachi-hi/geez2ethiop/actions/workflows/pylint.yml)
+
 This module converts Ethiopian scripts into PDFLaTeX commands.
 
 ## Installation
