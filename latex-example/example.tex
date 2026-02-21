@@ -1,27 +1,41 @@
 \documentclass{article}
-\usepackage{ifpdf}
-
-\ifpdf
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage[scaled=0.85]{beramono}
 \usepackage{tipa}
 \usepackage[ethiop,main=english]{babel}
-\newcommand{\geeztext}[1]{{\selectlanguage{ethiop}\mbox{#1}}}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
 
-\title{Example}
-\author{Author}
-\date{\today}
+
+\newcommand{\geeztext}[1]{\foreignlanguage{ethiop}{\mbox{#1}}}
+
+\definecolor{codebg}{gray}{0.95}
+
+\pagestyle{empty}
 
 \begin{document}
-\maketitle
+
+\section*{\textsf{geez2ethiop} --- Example}
+
+\subsection*{Step 1: Write Geez text}
+\geeztext{'adise 'ababA}
+
+\subsection*{Step 2: Run the command}
+\colorbox{codebg}{\texttt{echo "\geeztext{'adise 'ababA}" | geez2ethiop {-}{-}latex}}
+
+\subsection*{Step 3: Get the output}
+\begin{Verbatim}[frame=single,rulecolor=\color{codebg},fillcolor=\color{codebg}]
 \geeztext{'adise 'ababA}
 \textipa{'\"adis\textschwa{} '\"ab\"aba}
+\end{Verbatim}
+
+\subsection*{Step 4: Paste and build with pdf\LaTeX{}}
+\fbox{\geeztext{'adise 'ababA}
+\quad
+\textipa{'\"adis\textschwa{} '\"ab\"aba}}
+
 \end{document}
-
-\else
-
-\begin{document}
-This example is only available for PDFLaTeX.
-\end{document}
-
-\fi
